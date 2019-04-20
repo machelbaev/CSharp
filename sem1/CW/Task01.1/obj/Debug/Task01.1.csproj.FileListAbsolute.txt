@@ -1,0 +1,11 @@
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.1.exe.config
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.1.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.1.pdb
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.pdb
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\bin\Debug\Task01.exe.config
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\obj\Debug\Task01.1.csprojAssemblyReference.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\obj\Debug\Task01.1.csproj.CoreCompileInputs.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\obj\Debug\Task01.1.csproj.CopyComplete
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\obj\Debug\Task01.1.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task01.1\obj\Debug\Task01.1.pdb

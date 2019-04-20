@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<University xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <list>
+    <Department>
+      <list>
+        <Human>
+          <name>Misha</name>
+        </Human>
+      </list>
+      <title>Computer Science</title>
+    </Department>
+  </list>
+  <title>HSE</title>
+</University>

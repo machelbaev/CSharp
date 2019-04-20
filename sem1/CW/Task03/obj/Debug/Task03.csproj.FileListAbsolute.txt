@@ -1,0 +1,7 @@
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\bin\Debug\Task03.exe.config
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\bin\Debug\Task03.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\bin\Debug\Task03.pdb
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\obj\Debug\Task03.csprojAssemblyReference.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\obj\Debug\Task03.csproj.CoreCompileInputs.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\obj\Debug\Task03.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task03\obj\Debug\Task03.pdb

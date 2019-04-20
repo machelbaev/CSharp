@@ -1,0 +1,12 @@
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task04.exe.config
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task04.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task04.pdb
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task01.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task01.pdb
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\bin\Debug\Task01.exe.config
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\obj\Debug\Task04.csprojAssemblyReference.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\obj\Debug\Task04.csproj.CoreCompileInputs.cache
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\obj\Debug\Task04.csproj.CopyComplete
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\obj\Debug\Task04.exe
+C:\Users\chelb\source\repos\182ChelbaevMikhail\module 4\sem1\CW\Task04\obj\Debug\Task04.pdb
