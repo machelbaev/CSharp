@@ -1,0 +1,7 @@
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\bin\Debug\Task06.exe.config
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\bin\Debug\Task06.exe
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\bin\Debug\Task06.pdb
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\obj\Debug\Task06.csprojAssemblyReference.cache
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\obj\Debug\Task06.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\obj\Debug\Task06.exe
+C:\Users\Mikhail\source\repos\module 4\sem4\CW\Task06\obj\Debug\Task06.pdb
