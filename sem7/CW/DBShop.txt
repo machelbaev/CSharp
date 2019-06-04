@@ -1,0 +1,1 @@
+[{"Area":"Kotelniky","City":"Moscow","Country":"Russia","Id":1,"Name":"Auchan","Phone":"8 (800) 700-58-00"},{"Area":"Aeroport","City":"Moscow","Country":"Russia","Id":2,"Name":"Magnit","Phone":"8 (800) 432-34-03"}]
