@@ -25,11 +25,11 @@ namespace Task
         [DataMember(Name = "Country")]
         private string _country;
 
-        [DataMember(Name = "PostCode")]
-        private int _postCode;
+        [DataMember(Name = "Postcode")]
+        private int _postcode;
 
         public BuyerFactory(string name, string surname, string address, string city,
-            string area, string country, int postCode)
+            string area, string country, int postcode)
         {
             _name = name;
             _surname = surname;
@@ -37,10 +37,10 @@ namespace Task
             _city = city;
             _area = area;
             _country = country;
-            _postCode = postCode;
+            _postcode = postcode;
         }
 
-        public Buyer Instance => new Buyer(_id++, _name, _surname, _address, _city, _area, _country, _postCode);
+        public Buyer Instance => new Buyer(_id++, _name, _surname, _address, _city, _area, _country, _postcode);
     }
 
 }

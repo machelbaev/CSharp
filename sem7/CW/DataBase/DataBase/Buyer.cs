@@ -5,17 +5,17 @@ namespace Task
     [DataContract]
     public class Buyer : IEntity
     {
-        public Buyer(long id, string name, string surName,
-            string address, string city, string area, string country, int postCode)
+        public Buyer(long id, string name, string surname,
+            string address, string city, string area, string country, int postcode)
         {
             Id = id;
             Name = name;
-            SurName = surName;
+            Surname = surname;
             Address = address;
             City = city;
             Area = area;
             Country = country;
-            PostCode = postCode;
+            Postcode = postcode;
         }
 
         [DataMember]
@@ -25,7 +25,7 @@ namespace Task
         public string Name { set; get; }
 
         [DataMember]
-        public string SurName { set; get; }
+        public string Surname { set; get; }
 
         [DataMember]
         public string Address { set; get; }
@@ -40,7 +40,7 @@ namespace Task
         public string Country { set; get; }
 
         [DataMember]
-        public int PostCode { set; get; }
+        public int Postcode { set; get; }
 
     }
 }

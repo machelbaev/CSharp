@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ArrayOfAnimal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animal xsi:type="Bird">
+    <Id>25</Id>
+    <Name>gmvut</Name>
+    <IsTakenCare>true</IsTakenCare>
+    <Speed>2</Speed>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>28</Id>
+    <Name>tavcsron</Name>
+    <IsTakenCare>true</IsTakenCare>
+    <Speed>54</Speed>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>29</Id>
+    <Name>rpqv</Name>
+    <IsTakenCare>true</IsTakenCare>
+    <Speed>70</Speed>
+  </Animal>
+  <Animal xsi:type="Mammal">
+    <Id>30</Id>
+    <Name>puanjvhvbq</Name>
+    <IsTakenCare>false</IsTakenCare>
+    <Paws>4</Paws>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>31</Id>
+    <Name>quzcpn</Name>
+    <IsTakenCare>false</IsTakenCare>
+    <Speed>35</Speed>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>36</Id>
+    <Name>opcs</Name>
+    <IsTakenCare>true</IsTakenCare>
+    <Speed>97</Speed>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>37</Id>
+    <Name>ksdegqrr</Name>
+    <IsTakenCare>false</IsTakenCare>
+    <Speed>90</Speed>
+  </Animal>
+  <Animal xsi:type="Mammal">
+    <Id>39</Id>
+    <Name>nyumxivl</Name>
+    <IsTakenCare>false</IsTakenCare>
+    <Paws>15</Paws>
+  </Animal>
+  <Animal xsi:type="Mammal">
+    <Id>40</Id>
+    <Name>cepvm</Name>
+    <IsTakenCare>false</IsTakenCare>
+    <Paws>7</Paws>
+  </Animal>
+  <Animal xsi:type="Bird">
+    <Id>41</Id>
+    <Name>dzqmrane</Name>
+    <IsTakenCare>true</IsTakenCare>
+    <Speed>6</Speed>
+  </Animal>
+</ArrayOfAnimal>

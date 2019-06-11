@@ -23,11 +23,13 @@ namespace Task
             db.CreateTable<Sales>();
 
             //shops
-            db.InsertInto<Shop>(new ShopFactory("Auchan", "Moscow", "Kotelniky", "Russia", "8 (800) 700-58-00"));
-            db.InsertInto<Shop>(new ShopFactory("Magnit", "Moscow", "Aeroport", "Russia", "8 (800) 432-34-03"));
+            db.InsertInto(new ShopFactory("Auchan", "Moscow", "Kotelniky", "Russia", "8 (800) 700-58-00"));
+            db.InsertInto(new ShopFactory("Magnit", "Moscow", "Aeroport", "Russia", "8 (800) 432-34-03"));
+            db.InsertInto(new ShopFactory("Magnit", "Saratov", "Center", "Russia", "8 (800) 353-75-93"));
+            db.InsertInto(new ShopFactory("Magnit", "Madrid", "Center", "Spain", "8 (800) 353-75-93"));
 
             //goods
-            db.InsertInto<Good>(new GoodFactory("Pepsi", 1, "fizzy drink", "beverages"));
+            db.InsertInto(new GoodFactory("Pepsi", 1, "fizzy drink", "beverages"));
             db.InsertInto(new GoodFactory("3 korochki", 1, "rusk", "food"));
             db.InsertInto(new GoodFactory("Ohota", 2, "beer", "beverages"));
             db.InsertInto(new GoodFactory("Lays", 3, "chips", "food"));
@@ -44,13 +46,21 @@ namespace Task
             Task4(db);
         }
 
-
+        /// <summary>
+        /// Task1
+        /// </summary>
+        /// <param name="db">database</param>
         private static void Task1(DataBase db)
         {
-            db.InsertInto(new SalesFactory(1, 1, 2, 2, 200));
+            db.InsertInto(new SalesFactory(customerId: 1, goodId: 1, shopId: 4, quantity: 2, cost: 200));
             db.InsertInto(new SalesFactory(2, 2, 3, 1, 100));
+            db.InsertInto(new SalesFactory(2, 3, 2, 1, 150));
         }
 
+        /// <summary>
+        /// Task2
+        /// </summary>
+        /// <param name="db">database</param>
         private static void Task2(DataBase db)
         {
             WriteInFile<Shop>(db);
@@ -65,6 +75,10 @@ namespace Task
             //}
         }
 
+        /// <summary>
+        /// Task 3
+        /// </summary>
+        /// <param name="db">database</param>
         private static void Task3(DataBase db)
         {
             //1
@@ -78,10 +92,10 @@ namespace Task
                         from item in goodsId
                         where g.Id == item
                         select g.Name;
-            Console.WriteLine("Goods which were bought by the customer with the longest name: ");
+            Console.Write("1) Goods which were bought by the customer with the longest name: ");
             foreach (var item in goods)
             {
-                Console.WriteLine(item);
+                Console.Write(item + " ");
             }
 
             //2
@@ -91,21 +105,97 @@ namespace Task
             var category = (from good in db.Table<Good>()
                             where good.Id == cost
                             select good.Category).First();
-            Console.WriteLine("Category of the most expensive good: " + category);
+            Console.WriteLine("\n2) Category of the most expensive good: " + category);
 
             //3
+            Console.Write("3) Cities with the smallest number of the sold goods: ");
+            var orderByShop = from sale in db.Table<Sales>()
+                              group sale by sale.ShopId into arr
+                              select arr;
+            var quantityInShop = (from sale in orderByShop
+                                  select new { id = sale.First().ShopId, sum = sale.Sum(x => x.Quantity) });
+            List<long> shops = new List<long>();
+            foreach (var item in quantityInShop)
+            {
+                if (item.sum == quantityInShop.Min(x => x.sum))
+                    shops.Add(item.id);
+            }
+            var cities = from id in shops
+                         from shop in db.Table<Shop>()
+                         where id == shop.Id
+                         select shop.City;
+            foreach (var item in cities)
+            {
+                Console.Write(item + " ");
+            }
 
             //4
-            //get the id of the most popular good
-            Dictionary<long, int> soldGoods = new Dictionary<long, int>();
-            //var goodId = from sale in db.Table<Sales>()
+            Console.Write("\n4) Customers who bought the most popular good: ");
+            var orderByGood = from sale in db.Table<Sales>()
+                              group sale by sale.GoodId into arr
+                              select arr;
+            var quantity = (from sale in orderByGood
+                            select new { id = sale.First().GoodId, sum = sale.Sum(x => x.Quantity) });
+            List<long> popularGoods = new List<long>();
+            foreach (var item in quantity)
+            {
+                if (item.sum == quantity.Max(x => x.sum))
+                    popularGoods.Add(item.id);
+            }
+            var buyersId = from sale in db.Table<Sales>()
+                           from good in popularGoods
+                           where good == sale.GoodId
+                           select sale.CustomerId;
+            var buyers = from buyer in db.Table<Buyer>()
+                         from id in buyersId
+                         where id == buyer.Id
+                         select buyer.Surname;
+            foreach (var item in buyers)
+            {
+                Console.Write(item + " ");
+            }
+
+            //5
+            var shopsGroupedByCountry = from shop in db.Table<Shop>()
+                                        group shop by shop.Country into arr
+                                        select arr;
+            var shopsInCountries = from item in shopsGroupedByCountry
+                                   select new { Country = item.First().Country, Number = item.Count() };
+            var smallestNumber = shopsInCountries.Last().Number;
+            Console.Write($"\n5) Countries with the smallest number of shops ({smallestNumber}): ");
+            foreach (var item in shopsInCountries)
+            {
+                if (item.Number == smallestNumber)
+                    Console.Write($"{item.Country} ");
+            }
+
+            //6
+            var purchases = from sale in db.Table<Sales>()
+                            from buyer in db.Table<Buyer>()
+                            from shop in db.Table<Shop>()
+                            where (sale.CustomerId == buyer.Id && sale.ShopId == shop.Id && shop.City != buyer.City)
+                            select new
+                            {
+                                Customer = buyer.Surname,
+                                CustomerCity = buyer.City,
+                                ShopCity = shop.City
+                            };
+            Console.Write("\n6) ");
+            foreach (var item in purchases)
+            {
+                Console.WriteLine($"{item.Customer} from {item.CustomerCity} made a purchase in {item.ShopCity}");
+            }
 
             //7
             var totalCost = (from sale in db.Table<Sales>()
                              select sale.Cost).Sum();
-            Console.WriteLine("Total cost: " + totalCost);
+            Console.WriteLine("7) Total cost: " + totalCost);
         }
 
+        /// <summary>
+        /// Task4
+        /// </summary>
+        /// <param name="db">database</param>
         private static void Task4(DataBase db)
         {
             Console.WriteLine("\n=======USER CONSOLE=======");
@@ -135,6 +225,11 @@ namespace Task
             }
         }
 
+        /// <summary>
+        /// Writes table in file
+        /// </summary>
+        /// <typeparam name="T">IEntity</typeparam>
+        /// <param name="db">database</param>
         private static void WriteInFile<T>(DataBase db) where T : IEntity
         {
             string path = $@"..\..\..\DB{typeof(T).ToString().Split('.')[1]}.txt";
@@ -158,6 +253,12 @@ namespace Task
             }
         }
 
+        /// <summary>
+        /// Reads table from file
+        /// </summary>
+        /// <typeparam name="T">IEntity</typeparam>
+        /// <param name="path">path to the file</param>
+        /// <returns>table</returns>
         private static T[] ReadFromFile<T>(string path)
         {
             T[] instance = null;
@@ -182,9 +283,13 @@ namespace Task
             return instance;
         }
 
+        /// <summary>
+        /// Adds the table
+        /// </summary>
+        /// <param name="db">database</param>
         private static void AddTable(DataBase db)
         {
-            Console.WriteLine("Input name of the table which you want to add: ");
+            Console.WriteLine("Input name of the table which you want to add (sales, buyer, good, shop): ");
             string tableName = Console.ReadLine().ToLower();
             switch (tableName)
             {
@@ -249,9 +354,13 @@ namespace Task
             Console.WriteLine("Table was successfylly created!");
         }
 
+        /// <summary>
+        /// Saves the table
+        /// </summary>
+        /// <param name="db">database</param>
         private static void SaveTable(DataBase db)
         {
-            Console.WriteLine("Input name of the table which you want to save: ");
+            Console.WriteLine("Input name of the table which you want to save (sales, buyer, good, shop): ");
             string tableName = Console.ReadLine().ToLower();
             switch (tableName)
             {
@@ -273,9 +382,13 @@ namespace Task
             }
         }
 
+        /// <summary>
+        /// Dispay the table
+        /// </summary>
+        /// <param name="db">database</param>
         private static void PrintTable(DataBase db)
         {
-            Console.WriteLine("Input name of the table which you want to display: ");
+            Console.WriteLine("Input name of the table which you want to display (sales, buyer, good, shop): ");
             string tableName = Console.ReadLine().ToLower();
             switch (tableName)
             {
@@ -298,8 +411,8 @@ namespace Task
                     PrintLine();
                     foreach (var buyer in db.Table<Buyer>())
                     {
-                        PrintRow(new string[] { buyer.Id.ToString(), buyer.Name, buyer.SurName, buyer.Address,
-                        buyer.City, buyer.Area, buyer.Country, buyer.PostCode.ToString()});
+                        PrintRow(new string[] { buyer.Id.ToString(), buyer.Name, buyer.Surname, buyer.Address,
+                        buyer.City, buyer.Area, buyer.Country, buyer.Postcode.ToString()});
                         PrintLine();
                     }
                     break;
@@ -332,13 +445,23 @@ namespace Task
         }
 
         #region code for printing tables
+        /// <summary>
+        /// width of the table on the screen
+        /// </summary>
         static int tableWidth = 90;
 
+        /// <summary>
+        /// Prints the line
+        /// </summary>
         static void PrintLine()
         {
             Console.WriteLine(new string('-', tableWidth));
         }
 
+        /// <summary>
+        /// Prints the row
+        /// </summary>
+        /// <param name="columns"></param>
         static void PrintRow(params string[] columns)
         {
             int width = (tableWidth - columns.Length) / columns.Length;
@@ -352,6 +475,12 @@ namespace Task
             Console.WriteLine(row);
         }
 
+        /// <summary>
+        /// Aligns the string in the center of the cell
+        /// </summary>
+        /// <param name="text">text</param>
+        /// <param name="width">width</param>
+        /// <returns>string</returns>
         static string AlignCentre(string text, int width)
         {
             text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
