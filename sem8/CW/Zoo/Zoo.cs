@@ -10,16 +10,16 @@ namespace Task
 {
     public class Zoo
     {
-        List<Animal> list;
+        public List<Animal> AnimalList { get; set; }
 
         public Zoo(List<Animal> list)
         {
-            this.list = list;
+            AnimalList = list;
         }
 
         public IEnumerator<Animal> GetEnumerator()
         {
-            Animal[] arr = list.ToArray();
+            Animal[] arr = AnimalList.ToArray();
             Array.Sort(arr, (x, y) =>
             {
                 return x.Name.Length.CompareTo(y.Name.Length);
