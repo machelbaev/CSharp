@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chelbaev_2", "Chelbaev_2\Chelbaev_2.csproj", "{FE84A049-7809-4643-B976-4B4D5E84930C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWLibrary", "CWLibrary\CWLibrary.csproj", "{623B0483-CD58-48F0-A308-97D291AB47DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE84A049-7809-4643-B976-4B4D5E84930C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE84A049-7809-4643-B976-4B4D5E84930C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE84A049-7809-4643-B976-4B4D5E84930C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE84A049-7809-4643-B976-4B4D5E84930C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623B0483-CD58-48F0-A308-97D291AB47DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623B0483-CD58-48F0-A308-97D291AB47DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623B0483-CD58-48F0-A308-97D291AB47DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623B0483-CD58-48F0-A308-97D291AB47DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17635FFD-09BF-4365-8868-1A2FFA155A32}
+	EndGlobalSection
+EndGlobal
